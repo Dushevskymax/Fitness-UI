@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Heebo";
-    src: url(./fonts/Heebo-Light.woff2) format('woff2');
+    src: url('./fonts/Heebo-Light.woff2') format('woff2');
     font-weight: 300;
     font-style: normal;
     font-display: swap;
@@ -8,7 +8,7 @@
 
 @font-face {
     font-family: "Heebo";
-    src: url(./fonts/Heebo-Light.woff2) format('woff2');
+    src: url('./fonts/Heebo-Bold.woff2') format('woff2');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -16,7 +16,7 @@
 
 @font-face {
     font-family: "Yantramanav";
-    src: url(./fonts/Yantramanav-Bold.woff2) format('woff2');
+    src: url('./fonts/Yantramanav-Bold.woff2') format('woff2');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -266,10 +266,12 @@
 
  .button {
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 26px;
   height: 38px;
   width: 124px;
-  align-items: center;
-  padding-inline: 26px;
+  text-align: center;
   font-family: var(--font-familyy-additional);
   font-size: 12px;
   font-weight: 700;
@@ -300,17 +302,18 @@
 
  .header-menu-list {
   display: flex;
+  flex-wrap: wrap;
   column-gap: 50px;
  }
 
  .header-menu-link {
   display: inline-flex;
   align-items: center;
-  height: 90px;
   text-decoration: none;
   text-transform: uppercase;
+  height: 90px;
+  font-weight: 700;
   font-size: 12px;
-  font-weight: bold;
   letter-spacing: 1.2px;
   column-gap: 7px;
 }
@@ -354,8 +357,45 @@
   background-color: currentColor;
   box-shadow: 16px 0 0 currentColor;
 }
-/* 
+
 @media (max-width:1000px) {
+
+  .header {
+    flex-wrap: wrap;
+    padding-top: 20px;
+    row-gap: 10px;
+    padding-inline: 15px;
+  }
+
+  .header-menu {
+    order: 1;
+    flex-basis: 100%;
+  }
   
-} */
+  .header-menu-link {
+    height: 50px;
+  }
+}
  
+@media (max-width: 750px) {
+
+  .header{
+    padding-top: 10px;
+  }
+
+  .header-menu-list {
+    column-gap: 24px
+  }
+
+  .header-menu-link {
+    height: 32px;
+  }
+
+  .header-actions {
+    column-gap: 15px;
+  }
+
+  .button {
+    width: 90px;
+  }
+}
