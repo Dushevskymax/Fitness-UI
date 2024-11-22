@@ -215,12 +215,13 @@
 
  :root {
     --color-black: #000;
-    --color-light: #fff;
+    --color-dark: #131619;
+    --color-white: #fff;
     --color-gray: #404040;
-    --color-light-gray: #c4c4c4;
+    --color-white-gray: #c4c4c4;
 
     --border-radius-btn: 30px;
-    --border-btn: 1px solid var(--color-light);
+    --border-btn: 1px solid var(--color-white);
 
     --font-family-base: 'Heebo', sans-serif;
     --font-familyy-additional: 'Yantramanav', sans-serif;
@@ -242,7 +243,7 @@
  }
 
  a {
-  color: var(--color-light);
+  color: var(--color-white);
  }
  
  a:hover {
@@ -258,6 +259,19 @@
     margin-inline: auto;
     padding-inline: var(--container-padding-x);
  }
+
+ .visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  clip-path: inset(100%) !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}
 
  h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
@@ -278,7 +292,7 @@
   letter-spacing: 1.2px;
   line-height: 2;
   text-transform: uppercase;
-  background-color: var(--color-light);
+  background-color: var(--color-white);
   border: none;
   border-radius: var(--border-radius-btn);
   white-space: nowrap;
@@ -294,6 +308,7 @@
   align-items: center;
   column-gap: 20px;
   padding-inline: 32px;
+  background-color: var(--color-dark);
  }
 
  .header-logo {
@@ -321,7 +336,7 @@
  .header-menu-link.is-current::after {
    content: "";
    width: 5px;
-   height: 5px;
+   aspect-ratio: 1;
    background-color: currentColor;
    border-radius: 50%;
  }
@@ -337,13 +352,13 @@
   justify-content: center;
   row-gap: 4px;
   width: 40px;
-  height: 40px;
+  aspect-ratio: 1;
   padding-left: 8px;
-  color: var(--color-light);
+  color: var(--color-white);
   border: var(--border-btn);
-  border-radius: var(--border-radius-btn);
+  border-radius: 50%;
   background-color: transparent;
-  color: var(--color-light);
+  color: var(--color-white);
  }
 
  .header-burger-button:hover{
