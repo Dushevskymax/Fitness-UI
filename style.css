@@ -352,12 +352,33 @@
  }
 
  .button.transparent {
+  width: 193px;
   height: var(--input-height);
-  padding-left: 31px;
-  padding-right: 80px;
+  padding-left: 39px;
+  padding-right: 81px;
   background-color: transparent;
   border: var(--border-btn);
+  position: relative;
 }
+  .button.transparent::after {
+    position: absolute;
+    right: 0;
+    content: "";
+    background: url('./Icons/button-arrow-top-right.svg');
+    background-position: center;
+    background-size: 70%;
+    background-repeat: no-repeat;
+    height: 100%;
+    aspect-ratio: 1;
+    border: var(--border-btn);
+    border-radius: 50%;
+  }
+
+  .button.button.transparent:hover {
+    background-color: var(--color-light-gray);
+    color: var(--color-black);
+    border: var(--color-black);
+  }
 
  .header {
   display: flex;
