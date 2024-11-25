@@ -70,13 +70,7 @@
  :where(dd[class]) {
    margin-left: 0;
  }
- 
- :where(fieldset[class]) {
-   margin-left: 0;
-   padding: 0;
-   border: none;
- }
- 
+  
  /**
    Убираем стандартный маркер маркированному списку,
    у которого есть атрибут class
@@ -85,35 +79,10 @@
    list-style: none;
  }
  
- :where(address[class]) {
-   font-style: normal;
- }
- 
- /**
-   Обнуляем вертикальные внешние отступы параграфа,
-   объявляем локальную переменную для внешнего отступа вниз,
-   чтобы избежать взаимодействие с более сложным селектором
-  */
- p {
-   --paragraphMarginBottom: 24px;
- 
-   margin-block: 0;
- }
- 
- /**
-   Внешний отступ вниз для параграфа без атрибута class,
-   который расположен не последним среди своих соседних элементов
-  */
- p:where(:not([class]):not(:last-child)) {
-   margin-bottom: var(--paragraphMarginBottom);
- }
- 
- 
  /**
    Упрощаем работу с изображениями и видео
   */
- img,
- video {
+ img {
    display: block;
    max-width: 100%;
    height: auto;
@@ -286,13 +255,13 @@
  h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
     text-transform: uppercase;
+    color: var(--color-white);
  }
 
  .title-medium {
   font-size: clamp(20px, 2.08vw, 40px);
   line-height: 1.3;
   text-transform: uppercase;
-  color: var(--color-white);
  }
 
  .backdrop-title {
@@ -560,9 +529,54 @@
   margin-bottom: 37px;
 }
 
+.training-types {
+  position: relative;
+  max-width: 1920px;
+  margin-inline: auto;
+  padding-top: 70px; 
+  padding-bottom: 120px;
+  background-color: var(--color-black);
+}
+
+.training-types-list {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 60px;
+}
+
+.training-types-item {
+--trainingTypesItemBgIconSize: 81px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 32px;
+  background: url('./Icons/training-types-arrow-left-bottom.svg');
+  background-position-x: 100%;
+  background-position-y: 0;
+  padding-top: var(--trainingTypesItemBgIconSize);
+  background-size: var(--trainingTypesItemBgIconSize);
+  background-repeat: no-repeat;
+}
+
+.training-types-image {
+  width: 150px;
+  height: 140px;
+}
+
+.training-types-item-title {
+  font-size: 16px;
+}
+
 @media (max-width:1919px) {
   .motivation-card-image{
     margin-block: -20px;
+  }
+}
+
+@media (max-width:1280px) {
+  .training-types-list {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -651,4 +665,17 @@
     margin-bottom: 20px;
   }
 
+  .training-types-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .training-types-item {
+   --trainingTypesItemBgIconSize: 50px;
+   row-gap: 10px;
+  }
+
+  .training-types-image {
+    max-width: 120px;
+  }
 }
