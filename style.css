@@ -187,6 +187,7 @@
     --color-dark: #131619;
     --color-white: #fff;
     --color-gray: #404040;
+    --color-middle-gray: #707070;
     --color-light-gray: #c4c4c4;
 
     --border-radius-btn: 30px;
@@ -396,9 +397,19 @@
     outline: none;
     background-color: var(--color-light-gray);
     color: var(--color-black);
-    
   }
 
+  /* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
 
  .header {
   display: flex;
@@ -787,6 +798,127 @@
 .family-image {
   scroll-snap-align: start;
 }
+
+.calculate {
+  background-color: var(--color-dark);
+  padding-top: 142px;
+  padding-bottom: 150px;
+}
+
+.calculate-inner {
+  display: flex;
+  align-items: center;
+  column-gap: 36px;
+}
+
+.calculate-body {
+  max-width: 627px;
+  flex-grow: 1;
+}
+
+.calculate-title:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.calculate-description {
+  margin-bottom: 31px;
+  max-width: 386px;
+}
+
+.calculate-form-body:not(:last-child) {
+  margin-bottom: 26px;
+}
+
+.calculate-form-body {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 30px;
+  row-gap: 18px;
+}
+
+.calculate-input.wide {
+  grid-column: -1 / 1;
+}
+
+.calculate-table-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 610px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculate-table-wrapper::before {
+  content: "";
+  position: absolute;
+  top:50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 100%;
+  aspect-ratio: 1;
+  background-color: var(--color-black);
+  border-radius: 50%;  
+}
+
+.calculate-table {
+  position: relative;
+  border-collapse: collapse;
+}
+
+.calculate-table th {
+  padding-top: 21px;
+  padding-bottom: 17px;
+  text-align: left;
+  text-transform: uppercase;
+  color: var(--color-white);
+}
+
+.calculate-table :is(td, th) {
+  padding-right: 15px;
+}
+
+.calculate-table :is(td, th):not(:first-child) {
+  padding-left: 31px;
+}
+
+.calculate-table :is(td, th):not(:last-child) {
+  border-right: 1px solid var(--color-middle-gray);
+}
+
+.calculate-table tbody td {
+  border-top: 1px solid var(--color-middle-gray);
+}
+
+.calculate-table tbody tr:last-child td:first-child {
+  position: relative;
+  /* border-bottom: 1px solid var(--color-middle-gray); */
+}
+
+.calculate-table tbody tr:last-child td:first-child::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 70%;
+  height: 1px;
+  background-color: var(--color-middle-gray);
+}
+
+.calculate-table td {
+  padding-top: 15px;
+  padding-bottom: 14px;
+}
+
+.calculate-table tfoot {
+  color: var(--color-white);
+}
+
+.calculate-table tfoot td {
+  padding-top: 33px;
+  padding-bottom: 0;
+}
+
 
 @media (max-width:1919px) {
   .motivation-card-image{
